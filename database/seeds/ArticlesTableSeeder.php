@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Article;
-
-class ArticleTableSeeder extends Seeder
+use App\Article;
+class ArticlesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,7 @@ class ArticleTableSeeder extends Seeder
      */
     public function run()
     {
+
         Article::truncate();
 
         $faker = \Faker\Factory::create();
