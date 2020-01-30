@@ -14,7 +14,7 @@ use App\Article;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -42,5 +42,16 @@ Route::delete('articles/{id}', function($id) {
     Article::find($id)->delete();
 
     return 204;
-})
+});*/
 
+
+Route::get('list', 'ArticleController@index');
+
+Route::post('login','UserController@login');//can access these without token
+Route::post('register','UserController@register');
+
+Route::group(['middleware'=>'auth:api'], function(){
+
+Route::post('details','API\UserController@details');// can't access without token
+
+});
