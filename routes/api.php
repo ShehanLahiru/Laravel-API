@@ -52,6 +52,8 @@ Route::post('register','UserController@register');
 
 Route::group(['middleware'=>'auth:api'], function(){
 
-Route::post('details','API\UserController@details');// can't access without token
+Route::get('details','API\UserController@details');// can't access without token
 
 });
+
+// passport Authserviceprovider,model,config/auth
